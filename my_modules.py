@@ -14,7 +14,12 @@ def calculate_top (team_data, stat_number):
     max_stat = max(team_data, key=lambda x: x[stat_number])
     return (max_stat)
 
-#def calculate_best (team_data):
+def calculate_best (team_data):
     """ This function returns the best player according to a weighted mean
         Goal as 1.5, avoided goal as 1.25 and assist as 1 """
-    
+    weighted_dict = dict ()
+    for player in team_data:
+        points = (player[1]*1.5) + (player[2]*1.25) + (player[3])
+        weighted_dict[player[0]] = points
+    best_name = max (weighted_dict, key=weighted_dict.get)
+    return (best_name)
