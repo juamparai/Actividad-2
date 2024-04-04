@@ -1,14 +1,10 @@
-from package_act_1 import *
-
-names = """ Agustin, Yanina, Andrés, Ariadna, Bautista, CAROLINA, CESAR, David, Diego, Dolores, DYLAN, ELIANA, Emanuel, Fabián, Noelia, Francsica, FEDERICO, Fernanda, GONZALO, Nancy """
-goals = [0, 10, 4, 0, 5, 14, 0, 0, 7, 2, 1, 1, 1, 5, 6, 1, 1, 2, 0, 11]
-goals_avoided = [0, 2, 0, 0, 5, 2, 0, 0, 1, 2, 0, 5, 5, 0, 1, 0, 2, 3, 0, 0]
-assists = [0, 5, 1, 0, 5, 2, 0, 0, 1, 2, 1, 5, 5, 0, 1, 0, 2, 3, 1, 0]
-games_played = 25
-
+from package_act_1.data import *
+from package_act_1.my_modules import *
 
 team_data = generate_structure (names, goals, goals_avoided, assists)
 
+for jugador in team_data:
+    print (jugador)
 
 topscorer = calculate_top(team_data, 1)
 print (f'Goleador/a: {topscorer[0]}')
